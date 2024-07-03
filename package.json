@@ -1,0 +1,30 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "this is namaste react by Rajat Saini",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajatsaini2003/namaste-react.git"
+  },
+  "keywords": [],
+  "author": "Rajat Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajatsaini2003/namaste-react/issues"
+  },
+  "homepage": "https://github.com/rajatsaini2003/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
