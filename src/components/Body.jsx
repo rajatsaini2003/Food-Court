@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Card from "./Card";
-import restaurantList from "../utils/mockData";
+import { APIswiggy } from "../utils/constants";
 
 
 const Body=()=>{
@@ -9,7 +9,7 @@ const Body=()=>{
          fetchData();
     },[]);
     const fetchData = async()=>{
-        const data=await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=26.9124336&lng=75.7872709"); 
+        const data=await fetch(APIswiggy); 
         const jsonn=await data.json();
        // console.log(jsonn);
        setRes(jsonn.data.success.cards[3].gridWidget.gridElements.infoWithStyle.restaurants);
@@ -29,6 +29,7 @@ const Body=()=>{
             </div>
             <div className="body-res">
             {res.map((restaurant)=>{
+                // key deni hai missing hai
                 return (
                     <Card {...restaurant.info}/>
                 )

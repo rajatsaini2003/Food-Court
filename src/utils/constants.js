@@ -2,3 +2,4 @@ export const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_los
 
 export const LOGO_URL="https://images-platform.99static.com//s_-2qgRrPZnWUpWIh4NeIu95UCE=/0x0:999x999/fit-in/500x500/99designs-contests-attachments/118/118612/attachment_118612943";
 
+export const APIswiggy="https://www.swiggy.com/mapi/homepage/getCards?lat=26.9124336&lng=75.7872709"
