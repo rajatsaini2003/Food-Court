@@ -19,3 +19,23 @@
  - Tree shaking -> remove unused code 
  - different dev and production bundles
  - Read parcel documents will help in system design interview
+
+
+# Food App
+Header
+    -logo
+    -nav Items
+
+Body
+    -search 
+    -restaurant container
+        -card
+         -image,name,rating,cuisine,etc. 
+
+
+Footer
+    -copyright
+    -links
+    -addrss
+    -contact
+
