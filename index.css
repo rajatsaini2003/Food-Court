@@ -33,11 +33,18 @@
 
 }
 .body{
+
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
 }
- 
+ .filter{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+ }
 .body-res{
     width: auto;
     display: flex;
