@@ -9,14 +9,14 @@ const Card=(props)=>{
     }
 
     // Truncate cuisines and join into a string
-    const truncatedCuisines = props.cuisines!=undefined? truncateString(props.cuisines.join(", "), 30):""; 
-    const Time=props.sla!=undefined? props.sla.deliveryTime: "unknown";
+    const truncatedCuisines = truncateString(props?.cuisines?.join(", "), 30); 
+    const Time=props?.sla?.deliveryTime;
     return(
         <div className="res-card" >
-            <img src={CDN_URL+props.cloudinaryImageId}  />
-            <h3>{props.name}</h3>
-            <span><p>{props.avgRating}⭐</p>
-            <p>{Time} Minutes</p></span>
+            <img src={CDN_URL+props?.cloudinaryImageId}  />
+            <h3>{props?.name}</h3>
+            <span><p>{props?.avgRating}⭐</p>
+            <p>Get in {Time} Minutes</p></span>
             <p>{truncatedCuisines}</p>
             
         </div>

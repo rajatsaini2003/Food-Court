@@ -15,6 +15,4 @@ const AppLayout=()=>{
     )
 }
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<React.StrictMode>
-    <AppLayout />
-  </React.StrictMode> )
+root.render(<AppLayout />)
