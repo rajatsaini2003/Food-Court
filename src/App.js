@@ -3,15 +3,17 @@ import ReactDOM from "react-dom/client"
 import Header from "./components/Header.jsx"
 import Body from "./components/Body.jsx";
 import {Footer} from "./components/Footer.jsx";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, RouterProvider,Outlet} from "react-router-dom";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import ErrorElement from "./components/ErrorElement.jsx";
+import RestaurantMenuPage from "./components/RestrauntMenuPage.jsx";
 const AppLayout=()=>{
     return(
         <div className="app">
             <Header/>
-            <Body/>
+            {/* here this outlet chooses children acc to the path */}
+            <Outlet/>
             <Footer/>
         </div>
     )
@@ -20,16 +22,27 @@ const appRouter=createBrowserRouter([
     {
         path:"/",
         element:<AppLayout/>,
+        children:[
+            {
+                path:"/",
+                element:<Body/> 
+            },
+            {
+                path:"/about",
+                element:<About/>
+            },
+            {
+                path:"/contactus",
+                element:<Contact/>
+            },
+            {
+                path:"/restaurant/:resid",
+                element:<RestaurantMenuPage/>
+            }
+        ],
         errorElement:<ErrorElement/>
-    },
-    {
-        path:"/about",
-        element:<About/>
-    },
-    {
-        path:"/contactus",
-        element:<Contact/>
     }
+    
 ])
 const root=ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />)

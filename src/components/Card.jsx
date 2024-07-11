@@ -11,8 +11,12 @@ const Card=(props)=>{
     // Truncate cuisines and join into a string
     const truncatedCuisines = truncateString(props?.cuisines?.join(", "), 30); 
     const Time=props?.sla?.deliveryTime;
+
+    const goToPage=()=>{
+        
+    }
     return(
-        <div className="res-card" >
+        <div className="res-card" onClick={goToPage} >
             <img src={CDN_URL+props?.cloudinaryImageId}  />
             <h3>{props?.name}</h3>
             <span><p>{props?.avgRating}⭐</p>
