@@ -40,4 +40,4 @@ Footer
     -contact
 
 # important 
-   - API key will not work without CORS chrome extension , so to load content from api we'll need to add cors extension , and also keep updating our body component and card componenet 
+   - API key will not work without CORS chrome extension , so to load content from api we'll need to add cors extension , and also keep updating our body component and card component because API key keeps changing
