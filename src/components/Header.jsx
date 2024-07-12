@@ -34,7 +34,7 @@ const Header=()=>{
                     <li> <Link to="/about"> About Us</Link></li>
                     <li> <Link to="/contactus"> Contact</Link></li>
                     <li> <Link to="/cart">Cart</Link></li>
-                    <button className={btn} onClick={()=>{
+                    <button className="btn" onClick={()=>{
                         if(btn=="LOGIN")
                         setBtn("LOGOUT")
                         else setBtn("LOGIN");

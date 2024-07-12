@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import Card from "./Card";
 import { APIswiggy } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import {Link} from "react-router-dom";
 
 const Body=()=>{
     //Main list of restaurants
@@ -22,7 +23,7 @@ const Body=()=>{
         // in api they keep changing the position of the data so if it doesn't work check jsonn data
         //cards[3] or cards[4] or cards[2] contains the restaurant cards
         const finalData=jsonn?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
-        console.log(jsonn);
+        //console.log(jsonn);
        setRes(finalData);
        setTempRes(finalData);
        
@@ -60,7 +61,7 @@ const Body=()=>{
     }
 
     //rendering the restaurant list
-    if(res.length==0){
+    if(res===undefined){
         return (
             <div>
                 <Shimmer />
@@ -81,9 +82,9 @@ const Body=()=>{
                 <button onClick={()=>{setTempRes(res)}}> Refresh</button>
             </div>
             <div className="body-res">
-            {tempRes.map((restaurant)=>{
+            {tempRes?.map((restaurant)=>{
                 return (
-                    <Card key={restaurant.info.id} {...restaurant.info}/>
+                   <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} > <Card key={restaurant.info.id} {...restaurant.info}/> </Link>
                 )
             })}
             </div>
