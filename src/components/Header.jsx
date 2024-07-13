@@ -13,10 +13,10 @@ const Header=()=>{
     // },[]);
 
 
-    // if dependency array not empty => useEffect is called only when any of the dependency changes
-    useEffect(()=>{
-        console.log("useEffect called");
-    },[btn]);
+    // if dependency array not empty => useEffect is called at first render and then only when any of the dependency changes
+    // useEffect(()=>{
+    //     console.log("useEffect called");
+    // },[btn]);
     
     
 

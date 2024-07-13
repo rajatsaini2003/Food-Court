@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RES_URL ,CDN_URL} from "../utils/constants";
+import { RES_URL } from "../utils/constants";
 import DishCard from "./DishCard";
 import Shimmer from "./Shimmer";
 import {useParams} from "react-router-dom"
