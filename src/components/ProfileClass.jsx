@@ -21,11 +21,20 @@ class ProfileClass extends React.Component{
         //console.log(json);
     }
     componentDidUpdate(){
-        console.log("child componentDidUpdate");
+        //if we don't clear interval then in componentWillUnmount
+        //then it will keep running even when we mount other components
+        // because this is a single page application which will affect performance
+
+        // this.timer=setInterval(()=>{
+        //     console.log("namaste");
+        // },1000)
+        
+        //console.log("child componentDidUpdate");
 
     }
     componentWillUnmount(){
-        console.log("child componentWillUnmount");
+        //clearInterval(this.timer);
+       // console.log("child componentWillUnmount");
     }
     render(){
         //console.log("child render");

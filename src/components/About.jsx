@@ -5,24 +5,24 @@ import { Component } from "react";
 class About extends Component{
     constructor(props){
         super(props);
-        console.log("parent constructor");
+        //console.log("parent constructor");
     }
-    componentDidMount(){
-        console.log("parent componentDidMount");
-    }
-    componentDidUpdate(){
-        console.log("parent componentDidUpdate");
-    }
-    componentWillUnmount(){
-        console.log("parent componentWillUnmount");
-    }
+    // componentDidMount(){
+    //     console.log("parent componentDidMount");
+    // }
+    // componentDidUpdate(){
+    //     console.log("parent componentDidUpdate");
+    // }
+    // componentWillUnmount(){
+    //     console.log("parent componentWillUnmount");
+    // }
     render(){
-        console.log("parent render");
+        //console.log("parent render");
         return(
             <div className="user-card">
             <h1>ABOUT</h1>
             <h2>This Is Namaste React</h2>
-            <Profile />
+            <ProfileClass />
 
         </div>
         )
