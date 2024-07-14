@@ -7,6 +7,13 @@ const Profile = () => {
   useEffect(()=>{
       //api call
       getUserDetails();
+      const timer=setTimeout(()=>{
+        console.log('hello');
+      });
+      return ()=>{
+        clearTimeout(timer);
+        console.log('useEffect return');
+      };
   
   },[]);
   async function getUserDetails(){
