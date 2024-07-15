@@ -8,6 +8,7 @@ a{
     border :1px solid black;
     padding:0px 20px;
     background-color: rgb(255, 255, 255);
+    overflow: hidden;
 }
 .logo{
     max-width: 100px;
@@ -219,6 +220,7 @@ flex-wrap: wrap;
     padding: 20px;
     border: 1px solid black;
     border-radius: 14px;
+    overflow:hidden
 }
 .res-head>h1{
     font-weight: bolder;

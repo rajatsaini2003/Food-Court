@@ -8,7 +8,14 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import ErrorElement from "./components/ErrorElement.jsx";
 import RestaurantMenuPage from "./components/RestrauntMenuPage.jsx";
+import OfflinePage from "./components/OfflinePage.jsx";
+import useOnlineStatus from './utils/useOnlineStatus.jsx';
 const AppLayout=()=>{
+    const onlineStatus=useOnlineStatus();
+    if(onlineStatus===false) return(    
+        <OfflinePage />
+    )
+    else
     return(
         <div className="app">
             <Header/>

@@ -1,4 +1,3 @@
-import React from 'react';
 import {useEffect, useState} from "react";
 import { APIswiggy } from "./constants";
 
@@ -17,7 +16,7 @@ const useGetRestaurant = () => {
         const jsonn=await data?.json();
         // in api they keep changing the position of the data so if it doesn't work check jsonn data
         //cards[3] or cards[4] or cards[2] contains the restaurant cards
-        const finalData=jsonn?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+        const finalData=jsonn?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
         
        setRes(finalData);
        

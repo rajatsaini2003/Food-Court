@@ -49,8 +49,9 @@ const Body=()=>{
        setSrchTxt("");
     }
 
+    //console.log(res)
     //rendering the restaurant list
-    if(res===undefined){
+    if(res===undefined||res.length===0){
         return (
             <div>
                 <Shimmer />

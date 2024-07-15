@@ -7,3 +7,5 @@ export const RES_URL="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU
 export const APIswiggy="https://www.swiggy.com/mapi/homepage/getCards?lat=26.9124336&lng=75.7872709"
 
 export const GITHUB_API='https://api.github.com/users/rajatsaini2003';
+
+export const DeliveryLogo="https://cdn-icons-png.flaticon.com/512/3128/3128841.png";
