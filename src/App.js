@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header.jsx"
 import Body from "./components/Body.jsx";
@@ -7,9 +7,13 @@ import {createBrowserRouter, RouterProvider,Outlet} from "react-router-dom";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import ErrorElement from "./components/ErrorElement.jsx";
-import RestaurantMenuPage from "./components/RestrauntMenuPage.jsx";
+//import RestaurantMenuPage from "./components/RestrauntMenuPage.jsx";
 import OfflinePage from "./components/OfflinePage.jsx";
 import useOnlineStatus from './utils/useOnlineStatus.jsx';
+import Shimmer from "./components/Shimmer.jsx";
+// chunking / code splitting /Dynamic Bundling
+// Lazy loading / On demand loading / Dynamic import
+const RestaurantMenuPage=lazy(()=>import("./components/RestrauntMenuPage.jsx"))
 const AppLayout=()=>{
     const onlineStatus=useOnlineStatus();
     if(onlineStatus===false) return(    
@@ -44,7 +48,9 @@ const appRouter=createBrowserRouter([
             },
             {
                 path:"/restaurant/:resid",
-                element:<RestaurantMenuPage/>
+                element:<Suspense fallback={<Shimmer/>}>
+                        <RestaurantMenuPage/>
+                    </Suspense>
             }
         ],
         errorElement:<ErrorElement/>
