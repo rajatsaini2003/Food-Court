@@ -1,29 +1,17 @@
-import { useEffect, useState } from "react";
-import { RES_URL } from "../utils/constants";
 import DishCard from "./DishCard";
 import Shimmer from "./Shimmer";
+import useResMenu from "../utils/useResMenu";
 import {useParams} from "react-router-dom"
 const RestaurantMenuPage=()=>{
-    const[resMenu,setResMenu]=useState(null);
-    useEffect(()=>{
-        fetchMenu();
-    },[])
     const params=useParams();
-    //console.log(params?.resid);
-    const fetchMenu=async()=>{
-        const response=await fetch(RES_URL+params.resid);
-        const data=await response.json();
-        //const finalData=data?.data?.cards[2]?.card?.card?.info
-      
-        //console.log(data);
-        setResMenu(data.data);
-    }
+    //console.log(params);
+    const resMenu=useResMenu(params.resid);
+    //console.log(resMenu);
     if(resMenu===null)
         <Shimmer/>
     else{
     const info=resMenu?.cards[2]?.card?.card?.info;
     
-    console.log(info);
     const topPicks=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
    
     

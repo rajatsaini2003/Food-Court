@@ -25,17 +25,17 @@ class ProfileClass extends React.Component{
         //then it will keep running even when we mount other components
         // because this is a single page application which will affect performance
 
-        this.timer=setInterval(()=>{
-            console.log("timer is running");
-        },1000)
+        // this.timer=setInterval(()=>{
+        //     console.log("timer is running");
+        // },1000)
         
-        //console.log("child componentDidUpdate");
+        console.log("child componentDidUpdate");
 
     }
     componentWillUnmount(){
-        clearInterval(this.timer);
-        console.log("timer cleared")
-       // console.log("child componentWillUnmount");
+        // clearInterval(this.timer);
+        // console.log("timer cleared")
+        console.log("child componentWillUnmount");
     }
     render(){
         //console.log("child render");

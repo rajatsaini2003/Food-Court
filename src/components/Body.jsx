@@ -1,34 +1,20 @@
 import {useEffect, useState} from "react";
 import Card from "./Card";
-import { APIswiggy } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
-
+import useGetResList from "../utils/useGetResList";
 const Body=()=>{
-    //Main list of restaurants
-    const [res,setRes]=useState([]);
-    // temporary list of restaurant to modify
     const [tempRes,setTempRes]=useState([]);
+    // temporary list of restaurant to modify
 
-
+    
+    const res=useGetResList();
+    //Main list of restaurants
+    
     useEffect(()=> {
-        fetchData();
-    },[]);
-
-
-    //fetch data from API and set it to res and tempRes respectively
-    const fetchData = async()=>{
-        const data=await fetch(APIswiggy); 
-        const jsonn=await data?.json();
-        // in api they keep changing the position of the data so if it doesn't work check jsonn data
-        //cards[3] or cards[4] or cards[2] contains the restaurant cards
-        const finalData=jsonn?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
-        //console.log(jsonn);
-       setRes(finalData);
-       setTempRes(finalData);
-       
-    };
-
+        setTempRes(res);
+    },[res]);
+    
 
     //sort the top restaurants based on rating in descending order
     const topRated=()=>{
@@ -37,7 +23,10 @@ const Body=()=>{
         )
         newRes.sort(function (a,b){return b.info.avgRating-a.info.avgRating});
         //we only update tempRes 
+        if(newRes.length!=0)
         setTempRes(newRes);
+        else
+        setTempRes(res);
     }
 
 
@@ -55,7 +44,7 @@ const Body=()=>{
         if(filtRes.length!=0)
         setTempRes(filtRes);
     else{
-        alert("NO matching result found")
+        alert("NO matching result found");
     }
        setSrchTxt("");
     }
