@@ -27,6 +27,21 @@ const Card=(props)=>{
             <p className=" text-sm py-[1%] mx-[10px]  flex justify-between">{truncatedCuisines}</p>
             
         </div>
-    )
-}
+    );
+};
+
+//higher order component
+export const withPromoLabel=(Card)=>{
+    return (props)=>{
+        return(
+            <div>
+                <label
+                 className=" absolute  bg-green-600 opacity-70 text-white ml-[15px] mt-1 w-[190px] p-2 rounded-lg z-10 flex justify-center items-center h-[24px] "
+                >Promoted</label>
+                <Card {...props}/>
+            </div>
+        );
+    };
+};
+//higher order component
 export default Card;

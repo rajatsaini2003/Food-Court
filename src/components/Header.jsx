@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
+import logo from "../assets/logo.png"
 import {Link} from "react-router-dom"
 const Header=()=>{
     const [btn,setBtn]=useState("LOGIN");
@@ -21,16 +22,16 @@ const Header=()=>{
     
 
     return (
-        <div className="flex justify-between items-center bg-pink-200 shadow-lg mb-2">
+        <div className="flex justify-between items-center bg-yellow-100 shadow-lg mb-2 h-[100px]">
             {/* logo */}
             <div >
-                <img className=" w-[100px] h-[100px] "
-                 src={LOGO_URL} />
+                <img className=" w-[100px] h-[100px] border border-black rounded-3xl "
+                 src={logo}/>
             </div>
 
             {/*nav items*/}
             <div className="nav-items">
-                <ul className="flex p-4 m-4 gap-5">
+                <ul className="flex p-4 m-4 gap-5 ">
                     <li className="cursor-pointer"> <Link to="/">Home</Link></li>
                     <li className="cursor-pointer"> <Link to="/about"> About Us</Link></li>
                     <li className="cursor-pointer"> <Link to="/contactus"> Contact</Link></li>
@@ -41,7 +42,7 @@ const Header=()=>{
                         else setBtn("LOGIN");
                         //console.log(btn);
                     }} 
-                    className=" w-[80px] border border-solid border-green-400 rounded-md bg-green-100"
+                    className=" w-[80px] h-[28px] border border-solid border-green-600 rounded-md bg-green-100"
                     >{btn}</button>
                 </ul>
             </div>

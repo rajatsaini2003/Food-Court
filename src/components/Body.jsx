@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import Card from "./Card";
+import Card ,{withPromoLabel}from "./Card";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useGetResList from "../utils/useGetResList";
@@ -15,6 +15,8 @@ const Body=()=>{
         setTempRes(res);
     },[res]);
     
+    //promoted card 
+    const RestaurantCardPromoted=withPromoLabel(Card);
 
     //sort the top restaurants based on rating in descending order
     const topRated=()=>{
@@ -54,7 +56,7 @@ const Body=()=>{
        setSrchTxt("");
     }
 
-    //console.log(res)
+    console.log(res)
     //rendering the restaurant list
     if(res===undefined||res.length===0){
         return (
@@ -66,26 +68,39 @@ const Body=()=>{
      else
         return(
         <div className="body">
-            <div className="filter flex"> 
-                <div className="search m-3 p-3 ">
+            <div className="filter flex items-center justify-center md:sm:flex-row flex-col "> 
+                <div className="search m-3 p-3  ">
                     <input type="text" value={srchTxt} onChange={(e)=>{setSrchTxt(e.target.value)}} 
-                    className="searchBox border border-solid border-black "
+                    className="searchBox border border-solid border-black h-[28px]"
                     />
                     <button type="submit" onClick={searchFunc} 
-                    className=" px-4 py-1 bg-green-100 m-4 rounded-md"
+                    className=" px-4  m-4 border border-solid h-[28px] border-green-600 rounded-md bg-green-100"
                     >Search</button>
                 </div>
                 <div className="m-3 p-3 flex items-center">                    
-                    <button className="filter-btn px-4 py-1 bg-gray-100 rounded-md"
+                    <button className="filter-btn px-4  h-[28px] border border-solid border-green-600 rounded-md bg-green-100"
                      onClick={topRated}>
                         Top Rated Restaurants
                     </button>
                 </div>      
             </div>
-            <div className="body-res flex flex-wrap">
+            <div className="body-res mx-2 flex flex-wrap items-center justify-center">
             {tempRes?.map((restaurant)=>{
                 return (
-                   <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} > <Card key={restaurant.info.id} {...restaurant.info}/> </Link>
+                    <Link 
+                    to={"/restaurant/"+restaurant.info.id} 
+                    key={restaurant.info.id}
+                    >
+                        {
+                            restaurant.info.promoted?(
+                                <RestaurantCardPromoted key={restaurant.info.id} {...restaurant.info}/>
+                            ):
+                            (
+                                <Card key={restaurant.info.id} {...restaurant.info}/> 
+                            )
+                        }
+                        
+                    </Link>
                 )
             })}
             </div>
