@@ -21,25 +21,28 @@ const Header=()=>{
     
 
     return (
-        <div className="header">
+        <div className="flex justify-between items-center bg-pink-200 shadow-lg mb-2">
             {/* logo */}
-            <div className="logo">
-                <img  src={LOGO_URL} />
+            <div >
+                <img className=" w-[100px] h-[100px] "
+                 src={LOGO_URL} />
             </div>
 
             {/*nav items*/}
             <div className="nav-items">
-                <ul>
-                    <li> <Link to="/">Home</Link></li>
-                    <li> <Link to="/about"> About Us</Link></li>
-                    <li> <Link to="/contactus"> Contact</Link></li>
-                    <li> <Link to="/cart">Cart</Link></li>
-                    <button className="btn" onClick={()=>{
+                <ul className="flex p-4 m-4 gap-5">
+                    <li className="cursor-pointer"> <Link to="/">Home</Link></li>
+                    <li className="cursor-pointer"> <Link to="/about"> About Us</Link></li>
+                    <li className="cursor-pointer"> <Link to="/contactus"> Contact</Link></li>
+                    <li className="cursor-pointer"> <Link to="/cart">Cart</Link></li>
+                    <button  onClick={()=>{
                         if(btn=="LOGIN")
                         setBtn("LOGOUT")
                         else setBtn("LOGIN");
                         //console.log(btn);
-                    }} >{btn}</button>
+                    }} 
+                    className=" w-[80px] border border-solid border-green-400 rounded-md bg-green-100"
+                    >{btn}</button>
                 </ul>
             </div>
         </div>

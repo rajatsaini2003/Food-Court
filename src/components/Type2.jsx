@@ -22,7 +22,7 @@ const Type2 = (props) => {
                     <h3>{info?.cuisines.join(", ")}</h3>
                 </div>
             </div>
-            <h2>{topPicks.title}</h2>
+            <h1 className=' px-[10px] font-bold'>{topPicks.title}</h1>
             <div className="topPicks">
                 {topPicks?.carousel?.map((cas)=>{
                    return(

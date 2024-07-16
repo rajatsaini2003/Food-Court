@@ -18,15 +18,20 @@ const Body=()=>{
 
     //sort the top restaurants based on rating in descending order
     const topRated=()=>{
-        const newRes=tempRes.filter(
-            (element)=>element.info.avgRating>=4.5
-        )
-        newRes.sort(function (a,b){return b.info.avgRating-a.info.avgRating});
-        //we only update tempRes 
-        if(newRes.length!=0)
-        setTempRes(newRes);
-        else
-        setTempRes(res);
+        if(tempRes!==res){
+            setTempRes(res);
+        }
+        else{
+            const newRes=tempRes.filter(
+                (element)=>element.info.avgRating>=4.5
+            )
+            newRes.sort(function (a,b){return b.info.avgRating-a.info.avgRating});
+            //we only update tempRes 
+            if(newRes.length!=0)
+                setTempRes(newRes);
+            else
+            setTempRes(res);
+        }
     }
 
 
@@ -61,17 +66,23 @@ const Body=()=>{
      else
         return(
         <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" value={srchTxt} onChange={(e)=>{setSrchTxt(e.target.value)}} className="searchBox"/>
-                    <button type="submit" onClick={searchFunc} >Search</button>
+            <div className="filter flex"> 
+                <div className="search m-3 p-3 ">
+                    <input type="text" value={srchTxt} onChange={(e)=>{setSrchTxt(e.target.value)}} 
+                    className="searchBox border border-solid border-black "
+                    />
+                    <button type="submit" onClick={searchFunc} 
+                    className=" px-4 py-1 bg-green-100 m-4 rounded-md"
+                    >Search</button>
                 </div>
-                <button className="filter-btn" onClick={topRated}>
-                    Top Rated Restaurants
-                </button>
-                <button onClick={()=>{setTempRes(res)}}> Refresh</button>
+                <div className="m-3 p-3 flex items-center">                    
+                    <button className="filter-btn px-4 py-1 bg-gray-100 rounded-md"
+                     onClick={topRated}>
+                        Top Rated Restaurants
+                    </button>
+                </div>      
             </div>
-            <div className="body-res">
+            <div className="body-res flex flex-wrap">
             {tempRes?.map((restaurant)=>{
                 return (
                    <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} > <Card key={restaurant.info.id} {...restaurant.info}/> </Link>
