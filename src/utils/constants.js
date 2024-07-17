@@ -9,3 +9,5 @@ export const APIswiggy="https://www.swiggy.com/mapi/homepage/getCards?lat=26.912
 export const GITHUB_API='https://api.github.com/users/rajatsaini2003';
 
 export const DeliveryLogo="https://cdn-icons-png.flaticon.com/512/3128/3128841.png";
+
+export const Unavail_URL="https://www.foodnavigator.com/var/wrbm_gb_food_pharma/storage/images/_aliases/news_large/9/6/0/9/239069-6-eng-GB/Appetite-Learning-SIC-Food-20162.jpg"

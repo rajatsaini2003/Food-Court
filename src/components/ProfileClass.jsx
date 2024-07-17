@@ -41,11 +41,12 @@ class ProfileClass extends React.Component{
         //console.log("child render");
         const{name,location,twitter_username,avatar_url}=this.state.userInfo;
         return(
-            <div>
-                <img src={avatar_url} alt="User avatar" className="avatar-user"/>
-                <h2>Name: {name}</h2>
-                <h3>Location: {location}</h3>
-                <h3>Contact at X: @<Link to={"https://x.com/"+twitter_username}>{twitter_username} </Link></h3>
+            <div className='border rounded-lg h-[fit-content] w-[fit-content]'>
+                <img src={avatar_url} alt="User avatar" 
+                className=" flex items-center justify-center avatar-user scale-80 m-2 p-2 max-h-60 max-w-60 rounded-3xl "/>
+                <h2 className=' font-semibold p-2 m-2'>Name 🐱‍👤: {name}</h2>
+                <h3 className=' font-semibold p-2 m-2'>Location 🗺: {location}</h3>
+                <h3 className=' font-semibold p-2 m-2'>Contact at ✖: @<Link to={"https://x.com/"+twitter_username}>{twitter_username} </Link></h3>
             </div>
         )
     }

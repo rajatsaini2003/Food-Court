@@ -22,7 +22,8 @@ const Header=()=>{
     
 
     return (
-        <div className="flex justify-between items-center bg-yellow-100 shadow-lg mb-2 h-[100px]">
+        <div className="flex sm:justify-between sm:flex-row flex-col items-center
+         sm:items-center bg-yellow-100 shadow-lg mb-2 h-[fit-content] flex-wrap  ">
             {/* logo */}
             <div >
                 <img className=" w-[100px] h-[100px] border border-black rounded-3xl "
@@ -30,8 +31,8 @@ const Header=()=>{
             </div>
 
             {/*nav items*/}
-            <div className="nav-items">
-                <ul className="flex p-4 m-4 gap-5 ">
+            
+                <ul className="nav-items  flex flex-row p-4 m-4 gap-5 flex-wrap justify-around ">
                     <li className="cursor-pointer"> <Link to="/">Home</Link></li>
                     <li className="cursor-pointer"> <Link to="/about"> About Us</Link></li>
                     <li className="cursor-pointer"> <Link to="/contactus"> Contact</Link></li>
@@ -45,7 +46,7 @@ const Header=()=>{
                     className=" w-[80px] h-[28px] border border-solid border-green-600 rounded-md bg-green-100"
                     >{btn}</button>
                 </ul>
-            </div>
+            
         </div>
     )
 };

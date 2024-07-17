@@ -19,12 +19,10 @@ class About extends Component{
     render(){
         //console.log("parent render");
         return(
-            <div className="user-card">
-            <h1>ABOUT</h1>
-            <h2>This Is Namaste React</h2>
-            <ProfileClass />
-
-        </div>
+            <div className="user-card flex flex-col justify-center items-center">
+                <h1 className="font-bold m-2 p-2">ABOUT ME</h1>
+                <ProfileClass />
+            </div>
         )
     }
 }

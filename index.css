@@ -1,28 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-    overflow-x: hidden; /* Hide scrollbars */
-  }
+.dishCard,.topPicks {
+    overflow: scroll;
+    scrollbar-gutter: stable; /* This keeps the layout stable */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, and newer Edge) */
+.dishCard::-webkit-scrollbar,.topPicks::-webkit-scrollbar {
+    display: none;
+}
+
 
 .topPicks{
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    
+    padding-bottom: 0;
   }
 .dishCard{
     flex: 0 0 auto;
     display: inline-block;
-    overflow:hidden;
+    overflow-y: scroll;
     width: 200px;
     height: fit-content;
     border-radius: 15px;
-    box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
     padding: 10px;
     margin: 10px;
     vertical-align: top;
-    background-color:"#f0f0f0";
+    height: 400px;
+    
 }
 .dishCard>img{
     border-radius: 15px;
@@ -69,7 +76,8 @@ body {
 }
 .res-head{
     max-height: 200px;
-    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
     border: 1px solid black;
     border-radius: 14px;
@@ -97,8 +105,4 @@ body {
     padding: 10px;
     margin-top: 10px;
     border: 1px solid black;
-}
-.avatar-user{
-    height: 200px;
-    width: 200px;
 }
