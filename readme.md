@@ -1,4 +1,46 @@
-# Namaste React🚀
+# Food Court🚀
+
+## Overview
+The Food Court App is a dynamic and responsive web application built using React. This app leverages Swiggy's API to fetch and display real-time restaurant and menu information. Users can explore various restaurants, view detailed menus, and interact with categories to find their favorite dishes. The app provides a seamless and user-friendly experience, akin to modern food delivery platforms.
+
+## Features
+- Restaurant Listings: Browse through a curated list of restaurants with detailed information such as ratings, locality, delivery time, and cost for two.
+- Menu Display: View comprehensive menus for each restaurant, including categories and individual dish details.
+- Interactive Categories: Expand and collapse menu categories to easily navigate through different sections.
+- Top Picks: Highlighted section for top picks, showcasing popular dishes or special offers.
+- Responsive Design: Optimized for various devices to ensure a smooth experience on desktops, tablets, and mobile phones.
+- Loading State: Shimmer effect for a better user experience during data fetching.
+## Technology Stack
+- Frontend: React, HTML, CSS, Tailwind CSS ,JavaScript
+- API Integration: Swiggy's API for fetching restaurant and menu data
+- State Management: React hooks for managing local component state
+- Routing: React Router for handling different routes within the app
+# Getting Started
+- To run the project locally, follow these steps:
+
+## Clone the repository:
+
+In bash:
+- git clone https://github.com/yourusername/food-court-app.git
+- cd food-court-app
+
+## Install dependencies:
+- npm install
+- Also add Allow CORS: Access-Control-Allow-Origin on your browser as it is necessary to fetch API
+
+## Run the app:
+- npm run start
+- Open your browser and navigate to http://localhost:1234 to see the app in action.
+
+# Contributions
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+# License
+This project is licensed under the MIT License.
+
+# Acknowledgments
+Thanks to Swiggy for providing the API used in this project.
+Inspired by modern food delivery platforms for UI/UX design
 
 # Parcel
  - Dev build
@@ -21,23 +63,7 @@
  - Read parcel documents will help in system design interview
 
 
-# Food App
-Header
-    -logo
-    -nav Items
 
-Body
-    -search 
-    -restaurant container
-        -card
-         -image,name,rating,cuisine,etc. 
-
-
-Footer
-    -copyright
-    -links
-    -addrss
-    -contact
 
 # important 
-   - API key will not work without CORS chrome extension , so to load content from api we'll need to add cors extension , and also keep updating our body component and card component because API key keeps changing
+ ## API key will not work without CORS chrome extension , so to load content from api we'll need to add cors extension , and also keep updating component because API key keeps changing
