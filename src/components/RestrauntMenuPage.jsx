@@ -4,8 +4,11 @@ import {useParams} from "react-router-dom"
 import { DeliveryLogo } from "../utils/constants";
 import DishCard from "./DishCard";
 import Category from "./Category";
+import { useState } from "react";
 
 const RestaurantMenuPage=()=>{
+    const [showIndex,setShowIndex] =useState(0);
+
     const params=useParams();
     //console.log(params);
     const resMenu=useResMenu(params.resid);
@@ -13,6 +16,7 @@ const RestaurantMenuPage=()=>{
     const tempTopPicks=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
     const category=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
                     filter(c=>c?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    
     const topPicks=tempTopPicks?.title==="Top Picks"?tempTopPicks:undefined;
     //console.log(category);
     //console.log(resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR);
@@ -54,10 +58,17 @@ const RestaurantMenuPage=()=>{
                     }
                 </div>
                 <div className="category">
-                    {category.map((cat)=>{
+                    {category.map((cat,index)=>{
                         return(
                             <div className="w-[70vw] m-auto pt-5">
-                                <Category key={cat?.card?.card?.title} {...cat?.card?.card} />
+                                <Category 
+                                 key={cat?.card?.card?.title}
+                                 data={cat?.card?.card} 
+                                 showItem={showIndex===index}
+                                 setShowIndexFunc={(index)=>setShowIndex(index)
+                                 }
+                                 index={index}
+                                  />
                             </div>
                         )
                     })}
