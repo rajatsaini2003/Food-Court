@@ -1,12 +1,12 @@
-import {useEffect, useState} from "react";
+import {useEffect,useContext, useState} from "react";
 import Card ,{withPromoLabel}from "./Card";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useGetResList from "../utils/useGetResList";
+import UserContext from "../utils/UserContext";
 const Body=()=>{
     const [tempRes,setTempRes]=useState([]);
     // temporary list of restaurant to modify
-
     
     const res=useGetResList();
     //Main list of restaurants
@@ -14,8 +14,10 @@ const Body=()=>{
     useEffect(()=> {
         setTempRes(res);
     },[res]);
+
+    const {loggedInUser,setUserName}=useContext(UserContext);
     
-    //promoted card 
+    //promoted card higherOrder Component 
     const RestaurantCardPromoted=withPromoLabel(Card);
 
     //sort the top restaurants based on rating in descending order
@@ -82,7 +84,12 @@ const Body=()=>{
                      onClick={topRated}>
                         Top Rated Restaurants
                     </button>
-                </div>      
+                </div>
+                <div className="search m-3 p-3 flex ">
+                   User Name: <input type="text" value={loggedInUser} onChange={(e)=>{setUserName(e.target.value)}} 
+                    className="searchBox border border-solid border-black h-[28px]"
+                    />
+                </div>
             </div>
             <div className="body-res mx-2 flex flex-wrap items-center justify-center">
             {tempRes?.map((restaurant)=>{

@@ -1,32 +1,20 @@
-import { useState,useEffect } from "react";
-import { LOGO_URL } from "../utils/constants";
+import { useState,useEffect, useContext } from "react";
 import logo from "../assets/logo.png"
 import {Link} from "react-router-dom"
+import UserContext from "../utils/UserContext";
 const Header=()=>{
     const [btn,setBtn]=useState("LOGIN");
 
-    // if no dependency array => useEffect is called on every render
-    
-
-    // if dependency array is empty => useEffect is called only once when component mounts
-    // useEffect(()=>{
-    //     console.log("useEffect called");
-    // },[]);
-
-
-    // if dependency array not empty => useEffect is called at first render and then only when any of the dependency changes
-    // useEffect(()=>{
-    //     console.log("useEffect called");
-    // },[btn]);
-    
+    const {loggedInUser}=useContext(UserContext);
+    //console.log(loggedInUser);
     
 
     return (
         <div className="flex sm:justify-between sm:flex-row flex-col items-center
          sm:items-center bg-yellow-100 shadow-lg mb-2 h-[fit-content] flex-wrap  ">
             {/* logo */}
-            <div >
-                <img className=" w-[100px] h-[100px] border border-black rounded-3xl "
+            <div  >
+                <img className=" bg-green-100 w-[100px] h-[100px] border border-black rounded-full "
                  src={logo}/>
             </div>
 
@@ -45,6 +33,7 @@ const Header=()=>{
                     }} 
                     className=" w-[80px] h-[28px] border border-solid border-green-600 rounded-md bg-green-100"
                     >{btn}</button>
+                    <li className="font-bold">{loggedInUser}</li>
                 </ul>
             
         </div>

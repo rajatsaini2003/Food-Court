@@ -7,6 +7,7 @@ import Category from "./Category";
 import { useState } from "react";
 
 const RestaurantMenuPage=()=>{
+    //for the collabsable and expandeable category menu
     const [showIndex,setShowIndex] =useState(0);
 
     const params=useParams();

@@ -1,6 +1,7 @@
 import React from 'react';
 import { GITHUB_API } from '../utils/constants';
 import { Link } from 'react-router-dom';
+import UserContext from '../utils/UserContext';
 class ProfileClass extends React.Component{
     constructor(props){
         super(props);
@@ -29,19 +30,25 @@ class ProfileClass extends React.Component{
         //     console.log("timer is running");
         // },1000)
         
-        console.log("child componentDidUpdate");
+        //console.log("child componentDidUpdate");
 
     }
     componentWillUnmount(){
         // clearInterval(this.timer);
         // console.log("timer cleared")
-        console.log("child componentWillUnmount");
+        //console.log("child componentWillUnmount");
     }
     render(){
         //console.log("child render");
         const{name,location,twitter_username,avatar_url}=this.state.userInfo;
         return(
             <div className='border rounded-lg h-[fit-content] w-[fit-content]'>
+                <div className='flex'>
+                    LoggedInUser :
+                    <UserContext.Consumer>
+                        {({loggedInUser})=><h1>{loggedInUser}</h1>}
+                    </UserContext.Consumer>
+                </div>
                 <img src={avatar_url} alt="User avatar" 
                 className=" flex items-center justify-center avatar-user scale-80 m-2 p-2 max-h-60 max-w-60 rounded-3xl "/>
                 <h2 className=' font-semibold p-2 m-2'>Name 🐱‍👤: {name}</h2>
