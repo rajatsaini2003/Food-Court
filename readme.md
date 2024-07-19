@@ -15,7 +15,7 @@ The Food Court App is a dynamic and responsive web application built using React
 - API Integration: Swiggy's API for fetching restaurant and menu data
 - State Management: React hooks for managing local component state
 - Routing: React Router for handling different routes within the app
-# Getting Started
+## Getting Started
 - To run the project locally, follow these steps:
 
 ## Clone the repository:
