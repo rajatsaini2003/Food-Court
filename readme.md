@@ -10,11 +10,18 @@ The Food Court App is a dynamic and responsive web application built using React
 - Top Picks: Highlighted section for top picks, showcasing popular dishes or special offers.
 - Responsive Design: Optimized for various devices to ensure a smooth experience on desktops, tablets, and mobile phones.
 - Loading State: Shimmer effect for a better user experience during data fetching.
+
 ## Technology Stack
 - Frontend: React, HTML, CSS, Tailwind CSS ,JavaScript
 - API Integration: Swiggy's API for fetching restaurant and menu data
 - State Management: React hooks for managing local component state
 - Routing: React Router for handling different routes within the app
+
+## Redux-Toolkit
+- Set up Redux store with `createSlice` and `configureStore`
+- Created cartSlice with add, remove, and clear item reducers
+- Integrated Redux with React components using `useSelector` and `useDispatch`
+
 ## Getting Started
 - To run the project locally, follow these steps:
 

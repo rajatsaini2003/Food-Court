@@ -20,8 +20,8 @@ const useGetRestaurant = () => {
         
        setRes(finalData);
        
+       //console.log(jsonn?.data?.success);
     };
-    //console.log(res);
     return res;
 }
 

@@ -43,8 +43,8 @@ class ProfileClass extends React.Component{
         const{name,location,twitter_username,avatar_url}=this.state.userInfo;
         return(
             <div className='border rounded-lg h-[fit-content] w-[fit-content]'>
-                <div className='flex'>
-                    LoggedInUser :
+                <div className=' font-semibold p-2 m-2 flex'>
+                    LoggedInUser :-
                     <UserContext.Consumer>
                         {({loggedInUser})=><h1>{loggedInUser}</h1>}
                     </UserContext.Consumer>

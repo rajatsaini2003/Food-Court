@@ -71,7 +71,7 @@ const Body=()=>{
         return(
         <div className="body">
             <div className="filter flex items-center justify-center md:sm:flex-row flex-col "> 
-                <div className="search m-3 p-3  ">
+                <div className="search m-3 p-3 flex items-center justify-center flex-wrap ">
                     <input type="text" value={srchTxt} onChange={(e)=>{setSrchTxt(e.target.value)}} 
                     className="searchBox border border-solid border-black h-[28px]"
                     />
@@ -79,8 +79,8 @@ const Body=()=>{
                     className=" px-4  m-4 border border-solid h-[28px] border-green-600 rounded-md bg-green-100"
                     >Search</button>
                 </div>
-                <div className="m-3 p-3 flex items-center">                    
-                    <button className="filter-btn px-4  h-[28px] border border-solid border-green-600 rounded-md bg-green-100"
+                <div className="m-3 p-3 flex min-w-[220px] items-center">                    
+                    <button className="filter-btn px-4   overflow-hidden  h-[28px] border border-solid border-green-600 rounded-md bg-green-100"
                      onClick={topRated}>
                         Top Rated Restaurants
                     </button>
