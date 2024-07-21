@@ -22,6 +22,23 @@ The Food Court App is a dynamic and responsive web application built using React
 - Created cartSlice with add, remove, and clear item reducers
 - Integrated Redux with React components using `useSelector` and `useDispatch`
 
+## Types of Testing (Dev's)
+- Unit Testing
+- Integration testing
+- End to end testing - e2e testing
+
+## Setting up Testing in our App
+- Install React Testing library
+- Install Jest
+- Install Babel dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest - npx jest --init
+- Install jsdom library
+- Install @babel/preset-react to make jsx work in test cases
+- Include @babel/preset-react inside my babel configuration 
+- Install @testing-library/jest-dom
+
 ## Getting Started
 - To run the project locally, follow these steps:
 

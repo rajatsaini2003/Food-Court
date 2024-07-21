@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import CartCard from "./CartCard";
 import { Link } from "react-router-dom";
 const CartPage=()=>{
-    const disptch=useDispatch();
+    const dispatch=useDispatch();
     const handleRemove=()=>{
-        disptch(clearCart());
+        dispatch(clearCart());
     }
     const cartItems=useSelector((store)=>store.cart.items);
     console.log(cartItems);
