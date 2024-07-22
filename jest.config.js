@@ -193,6 +193,14 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  // jest.config.js
+
+  // jest.config.js
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/src/components/__mocks__/fileMock.js',
+  }
 };
+
+
 
 module.exports = config;

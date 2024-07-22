@@ -2,10 +2,10 @@ import { CDN_URL } from "../utils/constants";
 const Card=(props)=>{
     //  console.log(props);
     function truncateString(str, num) {
-        if (str.length <= num) {
+        if (str?.length <= num) {
             return str;
         }
-        return str.substring(0, num) + '...';
+        return str?.substring(0, num) + '...';
     }
 
     // Truncate cuisines and join into a string
