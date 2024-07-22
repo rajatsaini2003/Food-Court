@@ -58,7 +58,7 @@ const Body=()=>{
        setSrchTxt("");
     }
 
-    console.log(res)
+    //console.log(res)
     //rendering the restaurant list
     if(res===undefined||res.length===0){
         return (
@@ -72,7 +72,10 @@ const Body=()=>{
         <div className="body">
             <div className="filter flex items-center justify-center md:sm:flex-row flex-col "> 
                 <div className="search m-3 p-3 flex items-center justify-center flex-wrap ">
-                    <input type="text" value={srchTxt} onChange={(e)=>{setSrchTxt(e.target.value)}} 
+                    <input type="text" 
+                    data-testid="search-id"
+                    value={srchTxt} 
+                    onChange={(e)=>{setSrchTxt(e.target.value)}} 
                     className="searchBox border border-solid border-black h-[28px]"
                     />
                     <button type="submit" onClick={searchFunc} 

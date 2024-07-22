@@ -14,7 +14,8 @@ const Card=(props)=>{
 
    //console.log(props.id);
     return(
-        <div className="res-card m-[10px] p-[5px] w-[200px] h-[330px] rounded-lg bg-gray-100
+        <div data-testid="resCard"
+         className="res-card m-[10px] p-[5px] w-[200px] h-[330px] rounded-lg bg-gray-100
          hover:bg-gray-200 hover:scale-[101%] overflow-hidden shadow-md hover:shadow-lg"  >
             <img src={CDN_URL+props?.cloudinaryImageId} 
              className="rounded-lg mb-3 h-[160px] w-[100%]"
