@@ -9,14 +9,15 @@ const CartPage=()=>{
         dispatch(clearCart());
     }
     const cartItems=useSelector((store)=>store.cart.items);
-    console.log(cartItems);
+    //console.log(cartItems);
     return(
         <div className="w-[70vw] m-auto pt-5 ">
             <h1 className=" font-extrabold text-xl flex items-center justify-center pb-2 mb-2">
                 Cart Page</h1>
             {
                 cartItems.length===0 ? 
-               <Link to="/"> <h2 className="font-bold text-l flex items-center justify-center pb-2 mb-2">
+               <Link to="/"> <h2 data-tesid='emptyCart'
+                                className="font-bold text-l flex items-center justify-center pb-2 mb-2">
                     Cart is empty Go add some Items</h2>
                 </Link>:
                 <div>

@@ -8,10 +8,10 @@ const useResMenu=(resId)=>{
     //console.log(params?.resid);
     const fetchMenu=async()=>{
         const response=await fetch(RES_URL+resId);
-        const json=await response.json();
-              
-        //console.log(response);
-        setResMenu(json.data);
+        const jsonn=await response.json();
+        
+       // console.log(jsonn);
+        setResMenu(jsonn.data);
     }
     return resMenu;
 }

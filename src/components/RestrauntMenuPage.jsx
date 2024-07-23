@@ -8,18 +8,19 @@ import { useState } from "react";
 
 const RestaurantMenuPage=()=>{
     //for the collabsable and expandeable category menu
-    const [showIndex,setShowIndex] =useState(0);
+    const [showIndex,setShowIndex] =useState(-1);
 
     const params=useParams();
     //console.log(params);
     const resMenu=useResMenu(params.resid);
+    //console.log(resMenu);
     const info=resMenu?.cards[2]?.card?.card?.info;    
     const tempTopPicks=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
     const category=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
                     filter(c=>c?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
     
     const topPicks=tempTopPicks?.title==="Top Picks"?tempTopPicks:undefined;
-    //console.log(category);
+   // console.log(category);
     //console.log(resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR);
     return(
     resMenu===null?
