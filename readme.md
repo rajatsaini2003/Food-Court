@@ -45,7 +45,7 @@ The Food Court App is a dynamic and responsive web application built using React
 ## Clone the repository:
 
 In bash:
-- git clone https://github.com/yourusername/food-court-app.git
+- git clone https://github.com/rajatsaini2003/food-court-app.git
 - cd food-court-app
 
 ## Install dependencies:
